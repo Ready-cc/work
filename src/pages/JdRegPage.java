@@ -8,8 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import locator.HomeXp;
 import locator.JdXp;
-import locator.RegistXp;
-import libs.Do;
+import mylibs.Do;
 public class JdRegPage {
 	private WebDriver driver;
 	private Do du;

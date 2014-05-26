@@ -1,12 +1,16 @@
 package cases;
 
-import libs.BrowserInit;
-import libs.BrowserType;
-import libs.Do;
-import libs.Wait;
 import locator.JdXp;
+import mylibs.BrowserInit;
+import mylibs.BrowserType;
+import mylibs.Do;
+import mylibs.ScreenShot;
+import mylibs.Wait;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -21,7 +25,7 @@ public class TestJd {
 	public Wait wait;
 	JdRegPage jdpg;
 	JdHomePage jdhp;
-	
+	public ScreenShot ss;
 	
 	@BeforeClass
 	public void initBrowser(){
@@ -45,6 +49,25 @@ public class TestJd {
 		jdhp.ss("aaa");	
 		
 	}
+	@Test
+	public void home(){
+		
+		ss = new ScreenShot();
+		driver.get("http://www.baidu.com");
+		driver.findElement(By.xpath("//input[@id='kw1']")).sendKeys("test");
+		driver.findElement(By.xpath("//input[@id='kw1']")).submit();
+		WebElement ee = driver.findElement(By.xpath("//a[@class='s_logo']"));
+		wait.waitFor(500);
+		try {
+			ss.screenHot(driver, "aa");
+			ss.captureScreen(ee, "aa", 0, 0, 100, 100);
+			ss.gsscAddTooltip(ee, ss.gsscCreateTooltip(ee, 0));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 	@AfterClass
 	public void release(){
 		driver.close();

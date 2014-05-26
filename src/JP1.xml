@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="yunmao" parallel="methods" thread-count="1">
+	<test verbose="2"  preserve-order="true" name="yunmao">
+		<classes>
+			<class name="aa.UserSeta">
+				<methods>
+					<include name="changeiFrame" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

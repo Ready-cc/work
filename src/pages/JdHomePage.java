@@ -1,7 +1,7 @@
 package pages;
 
-import libs.Do;
 import locator.JdXp;
+import mylibs.Do;
 
 import org.openqa.selenium.WebDriver;
 

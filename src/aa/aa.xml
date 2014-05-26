@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="CBMP" parallel="methods">
+  <!-- listeners 用例执行结果监听，失败后则执行 mylibs.RetryListener-->>
+   <listeners>
+     <listener class-name="mylibs.RetryListener" />
+     <listener class-name="mylibs.TestngListener" />
+   </listeners>
+  <test name="Test" preserve-order="true" >
+        <classes>            
+               <class name="aa.Testa"> 
+               	<methods>
+					<include name="test" />
+				</methods>
+               </class>
+        </classes>
+  </test>
+</suite>
