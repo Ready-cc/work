@@ -1,0 +1,55 @@
+package practiceseven.libs;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import practicefour.ParseProperties;
+import practicefour.Wait;
+import practicejava.CustomException;
+
+public class Do {
+
+	private WebDriver driver;
+	private Wait waiter;
+	
+	public Do(WebDriver driver){
+		this.driver = driver;	
+		waiter = new Wait(driver);
+	}
+	
+	public WebElement what(String locatorname) throws CustomException{
+		WebElement we;
+		try{
+			this.waitForElementPresent(locatorname);
+			we = driver.findElement(By.xpath(locatorname));
+		}catch(NoSuchElementException e){
+			throw new CustomException("not element is displaying");
+		}
+		return we;
+	}
+	
+	public List<WebElement> whats(String locatorname){
+		return driver.findElements(By.xpath(locatorname));
+	}
+	
+	public void waitForElementPresent(String locatorname){
+		waiter.waitForElementPresent(locatorname);
+	}
+	
+	public void waitForElementIsEnable(String locatorname){
+		waiter.waitForElementIsEnable(locatorname);
+	}
+	
+	
+	
+	
+	
+	public void waitFor(long timeout){
+		waiter.waitFor(timeout);
+	}
+	
+}

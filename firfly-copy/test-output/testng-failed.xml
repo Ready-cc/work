@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default suite]">
+  <test name="Default test(failed)" preserve-order="true">
+    <classes>
+      <class name="practiceten_2.TestCase">
+        <methods>
+          <include name="mouseRightclickContext"/>
+          <include name="releaseFFDriver"/>
+          <include name="startFirefox"/>
+        </methods>
+      </class> <!-- practiceten_2.TestCase -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
